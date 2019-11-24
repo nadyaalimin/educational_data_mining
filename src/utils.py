@@ -1,3 +1,9 @@
+import pickle
+
+def dump_to_pickle(data, out_file_path):
+    pickle.dump(data, open(out_file_path, 'wb'))
+    
+    
 def get_name_of_semester(cohort, semester):
     if (semester - cohort) == 0:
         return 'sem_01'
@@ -10,20 +16,9 @@ def get_name_of_semester(cohort, semester):
     else:
         return 'sem_99'
     
-
-def major_diff_comparator(first_col, second_col):
-    if first_col == second_col:
-        return 0
     
-    elif ((first_col.lower() == 'pendidikan dokter') and (second_col.lower() == 'kedokteran')):
+def change_major_detector(appl_major, onboard_major):
+    if appl_major == onboard_major:
         return 0
-    
     else:
-        list_1 = first_col.lower().split()
-        list_2 = second_col.lower().split()
-        
-        for item in list_2:
-            if item in list_1:
-                return 0
-            
-        return 1 
+        return 1
