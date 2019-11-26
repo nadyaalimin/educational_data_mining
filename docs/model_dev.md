@@ -77,5 +77,7 @@ It uses the following equation to scale a feature:
 
 ## Model Evaluation
 
+![cutoffs](/media/img/eval1.png)
+![CMs](/media/img/eval2.png)
 
 
