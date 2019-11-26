@@ -5,7 +5,7 @@ from .components import Header, InputContainer, RecommendationContainer
 def Root():
     element = dbc.Container([
         Header.render(),
-        #Tabs.render(),
+        html.Hr(),
         InputContainer.render(),
         html.Hr(),
         RecommendationContainer.render(),

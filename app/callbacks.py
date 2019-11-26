@@ -2,6 +2,7 @@ import base64
 import io
 import json
 import urllib
+import numpy as np
 
 import dash_html_components as html
 import dash_bootstrap_components as dbc
@@ -16,7 +17,7 @@ from .components import InputContainer, OutputContainer
 
 def register_callbacks(app: Dash):
     '''Register callbacks for the given app argument'''
-
+    
     predictor = Predictor()
 
     @app.callback(
@@ -50,7 +51,7 @@ def register_callbacks(app: Dash):
 
         if any(x == -1 for x in values):
             result = {
-                'error': 'All major choices must be non-empty'
+                'error': 'Please fill all the data'
             }
             return json.dumps(result)
 
@@ -101,6 +102,7 @@ def register_callbacks(app: Dash):
         
         return json.dumps({'data': data})
 
+    
     @app.callback(
         [
             Output('major-data', 'children'),
@@ -124,6 +126,7 @@ def register_callbacks(app: Dash):
 
         return json.dumps(data), "d-none", "d-none", "", "d-block"
 
+    
     @app.callback(
         [
             Output("first-recommended", "children"),
@@ -151,6 +154,7 @@ def register_callbacks(app: Dash):
         textColor = "text-white" if recommended else "text-primary"
         return recommended_str, performance, color, textColor
 
+    
     @app.callback(
         [
             Output("second-recommended", "children"),
@@ -178,6 +182,7 @@ def register_callbacks(app: Dash):
         textColor = "text-white" if recommended else "text-primary"
         return recommended_str, performance, color, textColor
 
+    
     @app.callback(
         [
             Output("third-recommended", "children"),

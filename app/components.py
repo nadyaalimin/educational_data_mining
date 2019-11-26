@@ -6,6 +6,7 @@ import dash_html_components as html
 import pandas as pd
 import pickle
 
+
 curr_course_list = {
     'Science': [
         ('phy', 'Physics'),
@@ -20,14 +21,14 @@ curr_course_list = {
     'General': [
         ('eng', 'English'),
         ('math', 'Mathematics'),
-        ('fin', 'Final'),
+        ('fin', 'Final National Exam'),
     ],
 }
+
 
 major_le_dict = pickle.load(open("app/data/major_le_dict.pkl", 'rb'))
 major_options = [{'label':major, 'value':code} for major,code in major_le_dict.items()]
 major_options.insert(0, {'label': '-', 'value': -1})
-
 major_choice_list = {
     'first': 'First Choice',
     'second': 'Second Choice',
@@ -41,10 +42,10 @@ class Header:
         element = [
             dbc.Row([
                 dbc.Col([
-                    html.H1("UPH Major Recommender System (UMRS)"),
+                    html.H1("Pelita Harapan Major Recommender System"),
                     html.P(
-                        "Input your high school data below and find the most suitable major for you at UPH!")
-                ], md=5)
+                        "Input your high school data below and find the most suitable major for you at Universitas Pelita Harapan!")
+                ])
             ],
                 className="mt-5"
             )
@@ -52,31 +53,17 @@ class Header:
         return html.Div(element)
 
 
-# class Tabs:
-#     @staticmethod
-#     def render():
-#         element = dbc.Tabs(
-#             [
-#                 dbc.Tab(label="Playground", tab_id="playground",
-#                         tab_style={'cursor': 'pointer'}),
-#                 dbc.Tab(label="Batch Processor", tab_id="batch",
-#                         tab_style={'cursor': 'pointer'}),
-#             ],
-#             id="tabs",
-#             active_tab="playground",
-#             className="mt-3 mb-5",
-#         )
-#         return element
-
-
 class InputContainer:
     @staticmethod
     def render():
         element = [
             dbc.Row(
-                dbc.Col(
+                dbc.Col([
                     html.H2("Score Input"),
-                ),
+                    html.P(
+                        "Input your average scores from grade 10 to grade 11 for each course. Leave the score 0 for the course you didn't take in high school."
+                    )
+                ]),
                 className="mt-5 mb-2"
             ),
             dbc.Row(
@@ -85,9 +72,12 @@ class InputContainer:
                 )
             ),
             dbc.Row(
-                dbc.Col(
+                dbc.Col([
                     html.H2("Major Input"),
-                ),
+                    html.P(
+                        "Choose the majors from your top priority to the least priority."
+                    )
+                ]),
                 className="mt-5 mb-2"
             ),
             dbc.Row(
@@ -97,7 +87,7 @@ class InputContainer:
             ),
             dbc.Row(
                 dbc.Col(
-                    dbc.Button("Pick a major for me!",
+                    dbc.Button("Show the most fit major for me!",
                                outline=True, color="primary", id="submit-button", className="ml-auto")
                 ),
                 className="mt-5 mb-5",
@@ -187,7 +177,7 @@ class OutputContainer:
     def render():
         element = html.Div([
             html.P(
-                "Fill up your data and the machine will try to choose the best major for you!",
+                "Fill up your data and we will try to choose the best major for you!",
                 id="output-welcome",
             ),
             dbc.Alert(
