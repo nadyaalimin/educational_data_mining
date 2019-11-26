@@ -18,7 +18,7 @@ Make sure you have the following prerequisites in order to run the application.
 
 ### Running Instruction
 
-Follow the instructions below step-by-step.
+Follow the instruction below step-by-step.
 
 #### 1. Cloning/Downloading the Repository 
 
@@ -116,15 +116,20 @@ The diagram above shows major steps of this project development. Each block will
 The whole process of model development can roughly be represented by the above diagram.
 Final model used in this project is Random Forest Classifier. The raw code from data cleansing to model evaluation 
 is available inside the [notebooks](notebooks) directory in this repository. If you want to understand more about the 
-model development, you can check the documentation [here]().
+model development, you can check the documentation [here](docs/model_dev.md).
 
 ### Front-end Development
 
 ### Integration 
 
+Model that's already fitted to the train data is then saved as pickle with `.pkl` extension. The pickled model can later
+be loaded for further utilisation. [Model](model) directory contains all the three trained model with different algorithms and
+one script `predictor.py`. The script contains a class called `Predictor` which will be called later to perform live 
+prediction in the app using one of the three models. 
+
 ### Production
 
-Once everything is done, the app is ready to use. 
+Once everything is done, the app is ready to use.
 
 <p>&nbsp;</p>
 
