@@ -106,7 +106,7 @@ and `recall` around **70%** when the cutoff is 0.5. Not bad!
 
 ![cutoffs](/media/img/eval1.png)
 
-We also provide the `Confusion Matrix` and `AUC-ROC Curve` for both train and test set below. The `AUC score` for train set is 0.76 while the test set gives 0.73. Seems like the model is not overfitted, another good sign!
+We also provide the `Confusion Matrix` and `AUC-ROC Curve` for both train and test set below. The `AUC score` for train set is **0.76** while the test set gives **0.73**. Seems like the model is not overfitted, another good sign!
 
 ![CMs](/media/img/eval2.png)
 
