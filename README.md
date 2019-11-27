@@ -1,5 +1,7 @@
 # Pelita Harapan Major Recommender System (PHMRS)
 
+<p>&nbsp;</p>
+
 ## Background
 
 Pursuing the right major in university is very important as it will have much contribution to students future career. However, 
