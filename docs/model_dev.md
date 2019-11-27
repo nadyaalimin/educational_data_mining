@@ -54,22 +54,13 @@ to optimize model performance and to prevent data leakage. Selected features can
 
 ## Feature Transformation
 
-This process includes scaling numerical variables and encoding categorical variables. Label Encoder is used to encode
-categorical features and Standard Scaler is used to scale numerical variables.
+This process includes encoding categorical variables. Label Encoder is used to encode categorical features.
 
 ### [Label Encoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
 
 Most of machine learning algorithms cannot take `string` as input. Therefore, all categorical variables must be encoded 
 to `int` or `float` format to proceed. There are many encoding techniques, one of the most known is Label Encoder due to its
 simplicity. It uses simple ordinal encoding scheme to encode the categorical variables into integer. 
-
-### [Standard Scaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)
-
-Standardization is a common requirement for many machine learning algorithm. The model might perform badly if the scale of 
-numerical features are so much different from one another. Standard Scaler is one of the most popular and powerful scaler.
-It uses the following equation to scale a feature:
-
-![SS](/media/img/ss.png)
 
 You can see [this](/notebooks/2.0-model_development_feature_engineering.ipynb) to understand more on how to implement feature 
 transformation with Python. 
@@ -99,14 +90,15 @@ Check [this notebook](/notebooks/2.1-model_development_train.ipynb) to see more 
 
 ## Model Evaluation
 
-After models are trained, performance of each model is evaluated using the test set. We chose `Random Forest Classifier` as it gives the best metrics compared to the other two models. 
+After models are trained, performance of each model is evaluated using the test set. We chose `Logistic Regression` as it 
+gives the best metrics compared to the other two models. 
 
-In the image below you can see the `Random Forest` model metrics score for various probability cutoffs. It gives `accuracy` 
-and `recall` around **70%** when the cutoff is 0.5. Not bad!
+In the image below you can see the `Logistic Regression` model metrics score for various probability cutoffs. It gives 
+`accuracy` and `recall` around **68%** when the cutoff is 0.47. Not bad!
 
 ![cutoffs](/media/img/eval1.png)
 
-We also provide the `Confusion Matrix` and `AUC-ROC Curve` for both train and test set below. The `AUC score` for train set is **0.76** while the test set gives **0.73**. Seems like the model is not overfitted, another good sign!
+We also provide the `Confusion Matrix` and `AUC-ROC Curve` for both train and test set below. The `AUC score` for train set is **0.73** while the test set gives **0.71**. Seems like the model is not overfitted, another good sign!
 
 ![CMs](/media/img/eval2.png)
 
