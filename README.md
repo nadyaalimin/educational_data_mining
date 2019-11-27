@@ -2,7 +2,15 @@
 
 ## Background
 
-Many students of twelfth grade sometimes confused about what to choosing their major in university. 
+Pursuing the right major in university is very important as it will have much contribution to students future career. However, 
+choosing a major can be a real issue for most final year high school students. There are many students who can't figure out
+their interest or how their interest match to any major in university. Some only follow what their parents told them to be. 
+This often leads to students failure in college since they are not in the right place.
+
+If you are a final year high school students and still don't know what major fits for you, don't worry! Universitas Pelita 
+Harapan (UPH) offers solution to the mentioned problem through Pelita Harapan Major Recommender System (PHMRS). You just need 
+to input all your high school scores data and choose 3 majors offered at UPH that catch your attention the most, then we will 
+give the most suitable major for you! 
 
 <p>&nbsp;</p>
 
