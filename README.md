@@ -120,6 +120,13 @@ model development, you can check the documentation [here](docs/model_dev.md).
 
 ### Front-end Development
 
+Front-end was developed using [Dash](dash.plot.ly). The `app` directory contains three major python scripts that makes the
+application exists and alive.
+
+* `layout.py` - contains `Root` function that calls all the layout components to render.
+* `components.py` - contains the main code of UI.
+* `callbacks.py` - contains input-output flow of app.
+
 ### Integration 
 
 Model that's already fitted to the train data is then saved as pickle with `.pkl` extension. The pickled model can later
@@ -130,12 +137,6 @@ prediction in the app using one of the three models.
 ### Production
 
 Once everything is done, the app is ready to use.
-
-<p>&nbsp;</p>
-
-## Suggestions
-
-
 
 <p>&nbsp;</p>
 
